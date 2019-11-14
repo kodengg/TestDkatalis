@@ -1,0 +1,4 @@
+1. mongo
+2. import pymongod connect=pymongod.MongoClient("mongodb://<username>:secretPassword@127.0.0.1/<dbname>")
+3. mongodump
+4. mongostore

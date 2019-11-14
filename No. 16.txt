@@ -1,0 +1,38 @@
+class ListViewDemo extends React.Component {
+
+  formatData(data) {
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    const dataBlob = {};
+    const sectionIds = [];
+    const rowIds = [];
+
+    for (let sectionId = 0; sectionId < alphabet.length; sectionId++) {
+      const currentChar = alphabet[sectionId];
+
+      const users = data.filter((user) => user.name.first.toUpperCase().indexOf(currentChar) === 0);
+
+      if (users.length > 0) {
+
+        sectionIds.push(sectionId);
+
+        dataBlob[sectionId] = { character: currentChar };
+
+        rowIds.push([]);
+
+        for (let i = 0; i < users.length; i++) {
+
+          const rowId = `${sectionId}:${i}`;
+
+          rowIds[rowIds.length - 1].push(rowId);
+
+          dataBlob[rowId] = users[i];
+        }
+      }
+    }
+
+    return { dataBlob, sectionIds, rowIds };
+  }
+
+}
+
+export default ListViewDemo;

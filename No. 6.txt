@@ -1,0 +1,7 @@
+db.restaurants.find({
+"borough": "Bronx",
+$or : [
+{ "cuisine" : "America" },
+{ "cuisine" : "Chinese" }
+]}
+);

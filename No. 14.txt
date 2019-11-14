@@ -1,0 +1,11 @@
+function repeat(operation, num) {
+  var num_array = new Array(num);
+  for(var i = 0; i < num_array.length; i++){
+    return operation(num);
+  }
+}
+// 
+// The next lines are from a CLI, I did not make it.
+// 
+// Do not remove the line below
+module.exports = repeat 
